@@ -8,6 +8,7 @@ export const getDeliveryEmployeeForm = async (req: express.Request, res: express
 
 export const postDeliveryEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
+        console.log(req.body)
         const id = await createDeliveryEmployee(req.body);
         res.redirect('/deliveryEmployees/' + id);
     } catch(e) {
