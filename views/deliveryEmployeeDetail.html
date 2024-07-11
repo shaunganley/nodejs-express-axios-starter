@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> DeliveryEmployee {{ deliveryEmployee.deliveryEmployeeId }}</title>
+    </head>
+    <body>
+        <h1>Order {{ order.orderId }}</h1>
+        <h3>Order Date: {{ order.orderDate | date }}</h3>
+        <h3>Customer Name: {{ order.customer.customerName }}</h3>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Create Delivery Employee</title>
+    </head>
+    <body>
+        <h1>Create Delivery Employee</h1>
+
+        {% if errormessage %}
+        <h3>{{ errormessage }}</h3>
+        {% endif %}
+
+        <form class="form" action="/deliveryEmployeeForm" method="post">
+            <h3><label for="fName">
+                First Name:
+            </label></h3>
+            <input id="fName" name="fName" value="{{fName}}" type="text">
+
+            <h3><label for="lName">
+                Last Name:
+            </label></h3>
+            <input id="lName" name="lName" value="{{lName}}" type="text">
+
+            <h3><label for="salary">
+                Salary:
+            </label></h3>
+            <input id="salary" name="salary" value="{{salary}}" type="text">
+
+            <h3><label for="bankAccountNum">
+                Bank Account Number:
+            </label></h3>
+            <input id="bankAccountNum" name="bankAccountNum" value="{{bankAccountNum}}" type="text">
+
+            <h3><label for="nationalInsurance">
+                National Insurance Number:
+            </label></h3>
+            <input id="nationalInsurance" name="nationalInsurance" value="{{nationalInsurance}}" type="text">
+
+            </br></br>
+
+            <button id="submit">Submit</button>
+        </form>
+    </body>
+</html>
