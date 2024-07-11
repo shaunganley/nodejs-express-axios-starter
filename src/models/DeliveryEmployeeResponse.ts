@@ -3,6 +3,6 @@ export type DeliveryEmployeeResponse = {
     fName: String,
     lName: String,
     salary: Number,
-    bankAccountNumber: Number,
-    nationalInsuranceNumber: String
+    bankAccountNum: Number,
+    nationalInsurance: String
 }
