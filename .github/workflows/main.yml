@@ -1,0 +1,16 @@
+name: Source Control Linter
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Linter
+          run: npm run linter
