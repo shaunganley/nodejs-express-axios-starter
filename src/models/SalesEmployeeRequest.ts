@@ -3,6 +3,6 @@ export type SalesEmployeeRequest = {
     salary: number,
     bankAccountNumber: number,
     nationalInsuranceNumber: string,
-    roleID: number
+    RoleID: number
     comissionRate: number
 }

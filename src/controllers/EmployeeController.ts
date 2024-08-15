@@ -13,7 +13,7 @@ export const getEmployeeForm = async (req: express.Request, res: express.Respons
 export const postEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
         await createEmployee(req.body);
-        res.redirect('/deliveryEmployeeList');
+        res.redirect('/delivery');
     } catch (e) {
         res.locals.errormessage = e.message;
         res.render('createEmployeeForm.html', req.body);
@@ -32,7 +32,7 @@ export const getSalesEmployeeForm = async (req: express.Request, res: express.Re
 export const postSalesEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
         await createSalesEmployee(req.body);
-        res.redirect('/employees');
+        res.redirect('/sales');
     } catch (e) {
         res.locals.errormessage = e.message;
         res.render('createSalesEmployeeForm.html', req.body);

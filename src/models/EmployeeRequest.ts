@@ -3,5 +3,5 @@ export type EmployeeRequest = {
     salary: number,
     bankAccountNumber: number,
     nationalInsuranceNumber: string,
-    roleID: number
+    RoleID: number
 }

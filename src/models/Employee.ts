@@ -4,5 +4,5 @@ export type Employee = {
     bankAccountNumber: number,
     salary: number,
     nationalInsuranceNumber: string
-    roleId: number
+    RoleID: number
 }
