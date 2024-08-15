@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List of Projects</title>
+    </head>
+        <body>
+            <h1>Projects</h1>
+                <table>
+                    <tr>
+                        <th>Project ID</th>
+                        <th>Project Name</th>
+                        <th>Project Value/th>
+                        <th>Project Status</th>
+                        <th>Client ID</th>
+                        <th>TechLeadID ID</th>
+                    </tr>
+                {% for project in projects | sort(attribute='projectId') %}
+                    <tr>
+                        <h1>project {{ project.projectID }}</h1>
+                        <h2>project ProjectName {{  project.projectName}}</h2>
+                        <h3>project ProjectValue {{ project.projectValue  }}</h3>
+                        <h4>project ProjectStatus {{  project.projectStatus }}</h4>
+                        <h5>project ClientID {{ project.clientID }}</h5>
+                        <h5>project TechLeadID {{ project.techLeadID }}</h5>
+                    </tr>
+                {% endfor %}
+                </table>
+
+        </body>
+</html>

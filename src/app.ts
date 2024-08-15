@@ -2,7 +2,7 @@ import express from "express";
 import nunjucks from "nunjucks";
 import bodyParser from "body-parser";
 import session from "express-session";
-
+import { getAllProjects, getProjectForm, getSingleProject, postProjectForm } from "./controllers/ProjectController";
 import { getAllDatabases } from "./controllers/TestController";
 
 const app = express();
@@ -29,4 +29,7 @@ app.listen(3000, () => {
     console.log('Server started on port 3000');
 });
 
-app.get('/', getAllDatabases);
+app.get('/projects', getAllProjects);
+app.get('/projects/:id', getSingleProject);
+app.get('/projectForm', getProjectForm);
+app.post('/projectForm', postProjectForm);
