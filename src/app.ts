@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 import session from "express-session";
 
 import { getAllDatabases } from "./controllers/TestController";
-import { getDeliveryEmployees } from "./services/EmployeeService";
 import { getDeliveryEmployeesList, getEmployeeForm, postEmployeeForm } from "./controllers/EmployeeController";
 
 const app = express();
