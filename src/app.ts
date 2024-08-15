@@ -12,6 +12,10 @@ nunjucks.configure('views', {
     express: app
 });
 
+app.get('/', async (req: express.Request, res: express.Response)  => {
+  res.render('index.html');
+})
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
   extended: true
