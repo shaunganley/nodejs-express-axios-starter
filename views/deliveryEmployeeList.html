@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Delivery Employee List</title>
+    </head>
+    <body>
+        <h1>
+            Delivery Employees
+        </h1>
+        <table>
+            <tr>
+                <th>Employee ID:</th>
+                <th>Name: </th>
+                <th>Salary: </th>
+                <th>Bank Account Number: </th>
+                <th>NINO: </th>
+            </tr>
+            {% for employee in employees | sort(attribute='employeeId') %}
+                <tr>
+                    <td>{{ employee.employeeID }}</td>
+                        <td>{{ employee.employeeName }}</td>
+                        <td>{{ employee.salary }}</td>
+                        <td>{{ employee.bankAccountNumber }}</td>
+                        <td>{{ employee.nationalInsuranceNumber }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
