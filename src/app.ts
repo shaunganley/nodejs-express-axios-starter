@@ -5,7 +5,7 @@ import session from "express-session";
 
 import { getAllDatabases } from "./controllers/TestController";
 import { getDeliveryEmployees } from "./services/EmployeeService";
-import { getEmployeeForm, postEmployeeForm } from "./controllers/EmployeeController";
+import { getDeliveryEmployeesList, getEmployeeForm, postEmployeeForm } from "./controllers/EmployeeController";
 
 const app = express();
 
@@ -35,6 +35,6 @@ app.get('/', getAllDatabases);
 app.get('/index', async (req: express.Request, res: express.Response)  => {
   res.render('index.html');
 })
-app.get('/delivery', getDeliveryEmployees);
+app.get('/delivery', getDeliveryEmployeesList);
 app.get('/createEmployeeForm', getEmployeeForm);
-app.get('/postEmployeeForm', postEmployeeForm);
+app.post('/createEmployeeForm', postEmployeeForm);

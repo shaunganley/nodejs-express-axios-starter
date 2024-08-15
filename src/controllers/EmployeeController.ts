@@ -1,13 +1,9 @@
 import express from "express";
-import { createEmployee, getDeliveryEmployees, getEmployeeById } from "../services/EmployeeService"
+import { createEmployee, createSalesEmployee, getDeliveryEmployees } from "../services/EmployeeService"
 
 
 export const getDeliveryEmployeesList = async (req: express.Request, res: express.Response): Promise<void> => {
     res.render("deliveryEmployeeList.html", { employees: await getDeliveryEmployees() } )
-}
-
-export const getSingleEmployee = async (req: express.Request, res: express.Response): Promise<void> => {
-    res.render('employeeDetail.html', {product: await getEmployeeById(req.params.id) });
 }
 
 export const getEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
@@ -17,9 +13,23 @@ export const getEmployeeForm = async (req: express.Request, res: express.Respons
 export const postEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
     try {
         const id = await createEmployee(req.body);
-        res.redirect('/employees/');
+        res.redirect('/deliveryEmployeeList');
     } catch (e) {
         res.locals.errormessage = e.message;
         res.render('createEmployeeForm.html', req.body);
+    }
+}
+
+export const getSalesEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
+    res.render("createSalesEmployeeForm.html")
+}
+
+export const postSalesEmployeeForm = async (req: express.Request, res: express.Response): Promise<void> => {
+    try {
+        const id = await createSalesEmployee(req.body);
+        res.redirect('/employees/');
+    } catch (e) {
+        res.locals.errormessage = e.message;
+        res.render('createSalesEmployeeForm.html', req.body);
     }
 }

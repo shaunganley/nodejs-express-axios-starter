@@ -17,8 +17,8 @@
             </tr>
             {% for employee in employees | sort(attribute='employeeId') %}
                 <tr>
-                    <td><a href="/employees/delivery/{{employee.employeeId}}" target="_blank">{{ employee.employeeId }}</td>
-                        <td>{{ employee.name }}</td>
+                    <td>{{ employee.employeeID }}</td>
+                        <td>{{ employee.employeeName }}</td>
                         <td>{{ employee.salary }}</td>
                         <td>{{ employee.bankAccountNumber }}</td>
                         <td>{{ employee.nationalInsuranceNumber }}</td>

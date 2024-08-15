@@ -1,6 +1,7 @@
 import axios, {AxiosResponse} from "axios";
 import { EmployeeResponse } from "../models/EmployeeResponse";
 import { EmployeeRequest } from "../models/EmployeeRequest";
+import { SalesEmployeeRequest } from "../models/SalesEmployeeRequest"
 
 export const getDeliveryEmployees = async (): Promise<EmployeeResponse[]> => {
     try {
@@ -15,7 +16,18 @@ export const getDeliveryEmployees = async (): Promise<EmployeeResponse[]> => {
 
 export const createEmployee = async (employee: EmployeeRequest): Promise<Number> => {
     try {
-        const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees/create", employee);
+        const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees", employee);
+
+        return response.data;
+    } catch (e) {
+        console.log(e);
+        throw new Error(e.response.data);
+    }
+}
+
+export const createSalesEmployee = async (  salesEmployee: SalesEmployeeRequest): Promise<Number> => {
+    try {
+        const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees/sales/create", salesEmployee);
 
         return response.data;
     } catch (e) {

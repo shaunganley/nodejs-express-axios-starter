@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create Sales Employee</title>
+    </head>
+    <body>
+        <h1>Create Sales Employee</h1>
+
+        {% if errormessage %}
+            <h3>{{ errormessage }}</h3>
+        {% endif %}
+
+        <form class="form" action="/createEmployeeForm" method="post">
+            <h3><label for="name">
+                Name:
+            </label></h3>
+            <input id="Name" name="Name" value="{{Name}}" type="text">
+
+            <h3><label for="salary">
+                Salary:
+            </label></h3>
+            <input id="salary" name="salary" value="{{Salary}}" type="text">
+
+            <h3><label for="bankAccountNumber">
+                Bank Account Number
+            </label></h3>
+            <input id="bankAccountNumber" name="bankAccountNumber" value="{{BankAccountNumber}}" type="text">
+
+            <h3><label for="NINO">
+                NINO:
+            </label></h3>
+            <input id="nationalInsuranceNumber" name="nationalInsuranceNumber" value="{{NationalInsuranceNumber}}" type="text">
+
+            <h3><label for="roleId">
+                Role ID: 
+            </label></h3>
+            <input id="roleId" name="roleId" value="{{RoleID}}" type="text">
+
+            <h3><label for="comissionRate">
+                Comission Rate: 
+            </label></h3>
+            <input id="comissionRate" name="comissionRate" value="{{ComissionRate}}" type="text">
+
+            </br></br>
+
+            <button id="submit">Submit</button>
+        </form>
+    </body>
+</html>
