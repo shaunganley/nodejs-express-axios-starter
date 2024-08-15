@@ -1,7 +1,7 @@
 export type EmployeeResponse = {
-    employeeID: Number,
-    employeeName: String,
-    salary: Number,
-    bankAccountNumber: Number,
-    NationalInsuranceNumber: String
+    employeeID: number,
+    employeeName: string,
+    salary: number,
+    bankAccountNumber: number,
+    NationalInsuranceNumber: string
 }

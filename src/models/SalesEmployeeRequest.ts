@@ -1,8 +1,8 @@
 export type SalesEmployeeRequest = {
-    employeeName: String,
-    salary: Number,
-    bankAccountNumber: Number,
-    nationalInsuranceNumber: String,
-    roleID: Number
-    comissionRate: Number
+    employeeName: string,
+    salary: number,
+    bankAccountNumber: number,
+    nationalInsuranceNumber: string,
+    roleID: number
+    comissionRate: number
 }
