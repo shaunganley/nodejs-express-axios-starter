@@ -14,7 +14,7 @@ export const getDeliveryEmployees = async (): Promise<EmployeeResponse[]> => {
     }
 }
 
-export const createEmployee = async (employee: EmployeeRequest): Promise<Number> => {
+export const createEmployee = async (employee: EmployeeRequest): Promise<number> => {
     try {
         const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees", employee);
 
@@ -25,7 +25,7 @@ export const createEmployee = async (employee: EmployeeRequest): Promise<Number>
     }
 }
 
-export const createSalesEmployee = async (  salesEmployee: SalesEmployeeRequest): Promise<Number> => {
+export const createSalesEmployee = async (  salesEmployee: SalesEmployeeRequest): Promise<number> => {
     try {
         const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees/sales/create", salesEmployee);
 
