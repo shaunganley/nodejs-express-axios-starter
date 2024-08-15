@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+</head>
+<body>
+    <h1> Create Product</h1>
+
+    {% if errormessage %}
+        <h3>{{ errormessage }}</h3>
+    {% endif %}
+    
+    <form class="form" action="/salesEmployeeForm" method="post">
+        <h3><label for="name">
+            Name:
+        </label></h3>
+        <input id="name" name="name" value="{{name}}" type ="text">
+        
+        <h3><label for="name">
+            Salary:
+        </label></h3>
+        <input id="salary" name="salary" value="{{salary}}" type="text">
+    
+        <h3><label for="name">
+            Bank Account:
+        </label></h3>
+        <input id="bankAcc" name="bankAcc" value="{{bankAcc}}" type="text">
+
+        <h3><label for="name">
+            National Insurance Number:
+        </label></h3>
+        <input id="ni" name="ni" value="{{ni}}" type="text">
+
+        <h3><label for="name">
+            Commission Rate:
+        </label></h3>
+        <input id="commissionRate" name="commissionRate" value="{{commissionRate}}" type="text">
+    
+    </br></br>
+
+    <button id="submit">Submit</button>
+    </form>
+</body>
+</html>
