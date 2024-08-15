@@ -4,7 +4,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 
 import { getAllDatabases } from "./controllers/TestController";
-import { getDeliveryEmployeesList, getEmployeeForm, postEmployeeForm } from "./controllers/EmployeeController";
+import { getDeliveryEmployeesList, getEmployeeForm, getSalesEmployeeForm, getSalesEmployeesList, postEmployeeForm, postSalesEmployeeForm } from "./controllers/EmployeeController";
 
 const app = express();
 
@@ -37,3 +37,7 @@ app.get('/index', async (req: express.Request, res: express.Response)  => {
 app.get('/delivery', getDeliveryEmployeesList);
 app.get('/createEmployeeForm', getEmployeeForm);
 app.post('/createEmployeeForm', postEmployeeForm);
+
+app.get('/sales', getSalesEmployeesList);
+app.get('/createSalesEmployeeForm', getSalesEmployeeForm);
+app.post('/createSalesEmployeeForm', postSalesEmployeeForm);

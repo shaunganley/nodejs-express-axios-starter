@@ -1,5 +1,6 @@
 import axios, {AxiosResponse} from "axios";
 import { EmployeeResponse } from "../models/EmployeeResponse";
+import { SalesEmployeeResponse } from "../models/SalesEmployeeResponse"
 import { EmployeeRequest } from "../models/EmployeeRequest";
 import { SalesEmployeeRequest } from "../models/SalesEmployeeRequest"
 
@@ -27,12 +28,23 @@ export const createEmployee = async (employee: EmployeeRequest): Promise<number>
 
 export const createSalesEmployee = async (  salesEmployee: SalesEmployeeRequest): Promise<number> => {
     try {
-        const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees/sales/create", salesEmployee);
+        const response: AxiosResponse = await axios.post("http://localhost:8080/api/employees/sales", salesEmployee);
 
         return response.data;
     } catch (e) {
         console.log(e);
         throw new Error(e.response.data);
+    }
+}
+
+export const getSalesEmployees = async (): Promise<SalesEmployeeResponse[]> => {
+    try {
+        const response: AxiosResponse = await axios.get("http://localhost:8080/api/employees/sales")
+
+        return response.data;
+    } catch (e) {
+        console.log(e);
+        throw new Error('Failed to get sales employees')
     }
 }
 
