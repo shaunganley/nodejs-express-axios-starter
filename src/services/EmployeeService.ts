@@ -36,14 +36,4 @@ export const createSalesEmployee = async (  salesEmployee: SalesEmployeeRequest)
     }
 }
 
-export const getEmployeeById = async (id: String): Promise<EmployeeResponse> => {
-    try {
-        const response: AxiosResponse = await axios.get("http://localhost:8080/api/employees/" + id);
-
-        return response.data;
-    } catch (e) {
-        console.log(e);
-        throw new Error('Failed to get product');
-    }
-}
 
