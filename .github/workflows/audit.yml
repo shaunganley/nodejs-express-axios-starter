@@ -38,8 +38,8 @@ jobs:
 
         run: npm install
  
-      - name: Run linter
+      - name: Run Audit
 
-        run: npm run linter
+        run: npm audit
 
  
