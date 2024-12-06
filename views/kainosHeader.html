@@ -1,0 +1,34 @@
+<header>
+    <div class="container d-flex align-items-center">
+        <img src="/assets/images/kainoslogo.webp" alt="Kainos logo" class="logo" id="Kainoslogo">
+        <nav class="ml-auto">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.kainos.com/digital-services" id="Digitalserviceslink">Digital Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.kainos.com/workday" id="workdaylink">Workday</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.kainos.com/industries"id="kainosindustrieslink">Industries</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/job-roles" id="careerslink">Job Roles</a>
+                </li>
+                <li class="nav-item">
+                    {% if loggedin %}
+                    <button class="btn btn-danger" id="logout-button" onclick="logout()"><b>Log out</b></button>
+                    {% else %}
+                    <a id="login" class="btn btn-primary" href="/loginForm"><b>Log In</b></a>
+                    {% endif %}
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    function logout() {
+        window.location.href = '/logout';
+    }
+</script>
