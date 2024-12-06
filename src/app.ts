@@ -1,16 +1,23 @@
 import express from "express";
-import nunjucks from "nunjucks";
+import nunjucks, { } from "nunjucks";
 import bodyParser from "body-parser";
 import session from "express-session";
-
-import { getAllDatabases } from "./controllers/TestController";
+import { getAllJobRoles, getJobRoleById } from "./controllers/JobRoleController";
+import { dateFilter } from "./filters/DateFilter";
+import { getHomepage } from "./controllers/HomeController";
+import { allowRoles } from "./middleware/AuthMiddleware";
+import { getLoginForm, logout, postLoginForm } from "./controllers/AuthController";
+import { UserRole } from "./models/JwtToken";
 
 const app = express();
-
-nunjucks.configure('views', {
+const env = nunjucks.configure('views', {
     autoescape: true,
     express: app
 });
+
+env.addFilter('date', dateFilter);
+app.use(express.static('public'));
+app.set('view engine', 'html');
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -29,4 +36,11 @@ app.listen(3000, () => {
     console.log('Server started on port 3000');
 });
 
-app.get('/', getAllDatabases);
+app.get('/openJobRoles', allowRoles([UserRole.Admin, UserRole.User]), getAllJobRoles);
+app.get('/homepage', allowRoles([UserRole.Admin, UserRole.User]), getHomepage);
+app.get('/openJobRoles/:id', allowRoles([UserRole.Admin, UserRole.User]), getJobRoleById);
+app.get('/', getLoginForm);
+app.get('/loginForm', getLoginForm);
+app.post('/loginForm', postLoginForm);
+app.get('/logout', logout);
+
